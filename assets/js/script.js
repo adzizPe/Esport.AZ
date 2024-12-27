@@ -131,3 +131,7 @@ function updateTime() {
 // Memperbarui waktu setiap detik
 setInterval(updateTime, 1000);
 updateTime();  // Menampilkan waktu segera
+// changing the favicon
+const link = document.querySelector("link[rel= 'icon']");
+let i = 0;
+setInterval(() => link.href =`${++i % 3}.png` , 500);
