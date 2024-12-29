@@ -488,6 +488,61 @@ body {
   max-width: 560px;
   width: 100%;
 }
+.tournament-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a4f);
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.tournament-section .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffdd00;
+}
+
+.tournament-section .section-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #d3d3d3;
+}
+
+.tournament-section .tournament-btn {
+  display: inline-block;
+  background: #ffdd00;
+  color: #1e1e2f;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tournament-section .tournament-btn:hover {
+  background: #ffd700;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 221, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .tournament-section {
+    padding: 40px 15px;
+  }
+  .tournament-section .section-title {
+    font-size: 1.8rem;
+  }
+  .tournament-section .section-description {
+    font-size: 1rem;
+  }
+}
+
 
 .search-container .search-field {
   color: var(--white);
