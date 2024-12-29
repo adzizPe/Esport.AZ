@@ -2,9 +2,8 @@
 
 const navbar = document.querySelector("[data-navbar]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
-const navbarToggler = document.querySelector("[data-nav-toggler]"); // Pastikan hanya ini yang ada
+const navbarToggler = document.querySelector("[data-nav-toggler]");
 
-// Data konten untuk dua bahasa
 const content = {
   id: {
     subtitle: "Esports Dunia",
@@ -13,6 +12,8 @@ const content = {
     btnText: "Tentang Kami",
     followUs: "Ikuti Kami",
     moreInfo: "Info Lebih Lanjut",
+    news: "Berita",
+    home: "Beranda",
     emailPlaceholder: "Masukkan Email mu",
     copyrightText: "&copy; 2024 ESPORT .AZ All Right Reserved by <a href='#' class='copyright-link'>.AZ</a>",
     aboutUs: "Tentang Kami",
@@ -27,6 +28,8 @@ const content = {
     btnText: "About Us",
     followUs: "Follow Us",
     moreInfo: "More Info",
+    news: "News",
+    home: "Home",
     emailPlaceholder: "Enter Your Email",
     copyrightText: "&copy; 2024 ESPORT .AZ All Right Reserved by <a href='#' class='copyright-link'>.AZ</a>",
     aboutUs: "About Us",
@@ -35,6 +38,7 @@ const content = {
     market: "Market"
   }
 };
+
 
 const languageButtons = document.querySelectorAll(".lang-btn");
 
@@ -46,7 +50,7 @@ function setLanguage(lang) {
   document.querySelector(".hero-text").innerText = content[lang].description;
   document.querySelector(".btn").innerText = content[lang].btnText;
   document.querySelector(".social-title").innerText = content[lang].followUs;
-  
+
   // Mengubah footer
   document.querySelector(".footer-list-title").innerText = content[lang].followUs;
   document.querySelector(".footer-newsletter p").innerText = content[lang].moreInfo;
@@ -58,12 +62,17 @@ function setLanguage(lang) {
   document.querySelector("#tournaments").innerText = content[lang].tournaments;
   document.querySelector("#videos").innerText = content[lang].videos;
   document.querySelector("#market").innerText = content[lang].market;
+  document.getElementById("home-link").innerText = content[lang].home;
+  document.getElementById("news-link").innerText = content[lang].news;
+
+  // Perbarui waktu sesuai bahasa
+  updateTime(lang);
 }
 
 // Event listener untuk tombol bahasa
 languageButtons.forEach(button => {
   button.addEventListener('click', function() {
-    const lang = this.id;  // id = 'indonesia' or 'english'
+    const lang = this.id;  // id = 'id' or 'en'
     setLanguage(lang);  // Panggil fungsi untuk mengubah bahasa
   });
 });
@@ -113,7 +122,7 @@ window.addEventListener("scroll", function () {
 });
 
 // Update waktu saat ini
-function updateTime() {
+function updateTime(lang = 'id') {
   const now = new Date();
   const options = { 
       year: 'numeric', 
@@ -124,13 +133,15 @@ function updateTime() {
       second: '2-digit', 
       hour12: false 
   };
-  const formattedTime = now.toLocaleString('id-ID', options); // Format Indonesia
+  const locale = lang === 'id' ? 'id-ID' : 'en-US';
+  const formattedTime = now.toLocaleString(locale, options);
   document.getElementById('current-time').innerText = formattedTime;
 }
 
 // Memperbarui waktu setiap detik
-setInterval(updateTime, 1000);
+setInterval(() => updateTime(selectedLanguage || 'id'), 1000);
 updateTime();  // Menampilkan waktu segera
+
 // changing the favicon
 const link = document.querySelector("link[rel= 'icon']");
 let i = 0;
