@@ -259,7 +259,7 @@ body {
   left: calc(100% + 8px);
   width: 5px;
   transform: skewX(-16deg) translateX(var(--translateX, 0));
-  background-color: #0A5EB0;
+  
   transition: var(--transition);
 }
 
