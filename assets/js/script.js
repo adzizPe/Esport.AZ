@@ -39,6 +39,7 @@ const content = {
     aboutUs: "About Us",
     tournamentInputTitle: "Tournament Input",
     tournamentInputDescription: "Easily input your tournament information through our form. Click the button below to get started.",
+
     copyrightText: "&copy; 2024 ESPORT .AZ All Right Reserved by <a href='#' class='copyright-link'>.AZ</a>",
     tournamentInputButton: "Fill Out the Form",
     tournaments: "Tournaments",
