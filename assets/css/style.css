@@ -152,12 +152,14 @@ html {
   font-family: var(--ff-poppins);
   font-size: 10px;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Hilangkan scroll horizontal */
 }
 
 body {
   background-color: var(--raisin-black-3);
   font-size: 1.6rem;
   line-height: 1.5;
+  overflow-x: hidden; /* Hilangkan scroll horizontal */
 }
 
 :focus-visible { outline-offset: 4px; }
@@ -166,7 +168,22 @@ body {
 #home {
   position: relative;
 }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+.hero-subtitle, .hero-title, .hero-text, .btn {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .hero-subtitle.active, .hero-title.active, .hero-text.active, .btn.active {
+    opacity: 1;
+  }
 #home::before {
   content: '';
   position: absolute;
@@ -933,7 +950,13 @@ body {
   border-color: var(--marigold);
 }
 
+#current-time-container {
+  color: aqua;
+}
 
+#current-time {
+  font-weight: bold;
+}
 
 
 /*-----------------------------------*\
@@ -992,6 +1015,53 @@ body {
   margin-block: 10px 15px;
   transition: var(--transition);
 }
+/* Desain dasar tombol */
+.btnisi {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 50px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Efek Hover */
+.btnisi:hover {
+  background-color: #fff;
+  color: #007bff;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Efek animasi underline */
+.btnisi::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #007bff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.btnisi:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Efek Hover (Glow effect) */
+.btnisi:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+}
+
 
 .blog-card .card-title:is(:hover, :focus) { color: var(--marigold); }
 
