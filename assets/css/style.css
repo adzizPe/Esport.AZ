@@ -365,7 +365,7 @@ body {
 
 .header {
   position: relative;
-  min-height: 1px;
+  min-height: 2px;
 }
 
 .header-bottom {
@@ -925,37 +925,8 @@ body {
   align-items: center;
   color: var(--marigold);
 }
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px); /* Mulai dari bawah */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Masuk ke posisi normal */
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(10px); /* Mulai dari bawah */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Masuk ke posisi normal */
-  }
-}
+
+
 
 
 
@@ -1633,30 +1604,17 @@ body {
     font-weight: var(--fw-700);
     padding: 10px 20px;
   }
-  @keyframes fadeInNavbar {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px); /* Mulai dari atas */
+ 
+  .navbar-item {
+    position: relative; /* Atur posisi relative atau absolute */
+    animation: slideIn 1s;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Bergerak ke posisi semula */
-  }
-}
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px); /* Mulai dari kiri */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* Bergerak ke posisi normal */
-  }
-}
-.navbar-item {
   
-  animation: slideIn 4s ease-in-out forwards;
-}
+  @keyframes slideIn {
+   110% { transform: translateY(0); }
+  0% { transform: translateY(100%); }
+  }
+  
   .navbar-link::before {
     display: block;
     opacity: 0;
