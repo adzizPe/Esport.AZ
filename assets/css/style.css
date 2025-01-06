@@ -365,7 +365,7 @@ body {
 
 .header {
   position: relative;
-  min-height: 2px;
+  min-height: 1px;
 }
 
 .header-bottom {
@@ -378,15 +378,13 @@ body {
   z-index: 4;
 }
 
-.header-bottom.active {
-  position: fixed;
-  top: -85px;
-  animation: slideIn 0.5s var(--cubic-out) forwards;
-}
+
 
 @keyframes slideIn {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100%); }
+  100% { transform: translateY(110%); }
+  50% { transform: translateY(30%); }
+  0% {transform: translateX(12%)}
+  
 }
 
 .header-bottom .container {
@@ -925,7 +923,27 @@ body {
   align-items: center;
   color: var(--marigold);
 }
-
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(200px); /* Mulai dari bawah */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Masuk ke posisi normal */
+  }
+}
 
 
 
@@ -1604,17 +1622,11 @@ body {
     font-weight: var(--fw-700);
     padding: 10px 20px;
   }
- 
-  .navbar-item {
-    position: relative; /* Atur posisi relative atau absolute */
-    animation: slideIn 1s;
-  }
+
+.navbar-item {
   
-  @keyframes slideIn {
-   110% { transform: translateY(0); }
-  0% { transform: translateY(100%); }
-  }
-  
+  animation: slideIn 4s ;
+}
   .navbar-link::before {
     display: block;
     opacity: 0;
