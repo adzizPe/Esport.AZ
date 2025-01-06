@@ -163,27 +163,13 @@ body {
 }
 
 :focus-visible { outline-offset: 4px; }
-
-
 #home {
   position: relative;
+  overflow: hidden;
+  background-size: cover; /* Pastikan gambar mengisi seluruh area */
+  background-position: center;
+  transition: background-image 1s ease-in-out; /* Durasi perubahan gambar */
 }
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
-}
-.hero-subtitle, .hero-title, .hero-text, .btn {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-
-  .hero-subtitle.active, .hero-title.active, .hero-text.active, .btn.active {
-    opacity: 1;
-  }
 #home::before {
   content: '';
   position: absolute;
@@ -252,6 +238,9 @@ body {
   font-weight: var(--fw-700);
   min-height: 55px;
   padding-inline: 35px;
+  opacity: 0;
+  transform: translateY(10px); /* Posisi tombol dimulai dari bawah */
+  animation: fadeInUp 1.5s 0.5s forwards; 
 }
 
 .skewBg {
@@ -621,7 +610,13 @@ body {
   font-weight: var(--fw-700);
   text-transform: uppercase;
 }
-
+.hero-content {
+  position: relative;
+  z-index: 10;
+  opacity: 0; /* Awalnya sembunyi */
+  transform: translateY(30px); /* Posisi awal di bawah */
+  animation: fadeInUp 3s forwards; /* Durasi dan pengaturan animasi */
+}
 .hero-title { margin-block: 15px 12px; }
 
 .hero-text {
@@ -630,6 +625,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5); /* Latar belakang hitam transparan */
   padding: 10px 15px; /* Menambahkan padding agar teks tidak terlalu menempel ke latar belakang */
 }
+
 
 
 
@@ -929,6 +925,39 @@ body {
   align-items: center;
   color: var(--marigold);
 }
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Mulai dari bawah */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Masuk ke posisi normal */
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* Mulai dari bawah */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Masuk ke posisi normal */
+  }
+}
+
+
 
 .shop-card .card-price {
   font-family: var(--ff-oxanium);
@@ -1015,53 +1044,6 @@ body {
   margin-block: 10px 15px;
   transition: var(--transition);
 }
-/* Desain dasar tombol */
-.btnisi {
-  display: inline-block;
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  color: #fff;
-  background-color: #007bff;
-  border: 2px solid #007bff;
-  border-radius: 50px;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-/* Efek Hover */
-.btnisi:hover {
-  background-color: #fff;
-  color: #007bff;
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
-}
-
-/* Efek animasi underline */
-.btnisi::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background-color: #007bff;
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.btnisi:hover::before {
-  width: 100%;
-  left: 0;
-}
-
-/* Efek Hover (Glow effect) */
-.btnisi:active {
-  transform: scale(0.98);
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
-}
-
 
 .blog-card .card-title:is(:hover, :focus) { color: var(--marigold); }
 
@@ -1640,7 +1622,9 @@ body {
   .navbar-list { display: flex; }
 
   .navbar-item:not(:last-child) { border-block-end: none; }
-
+.navbar-list{
+  animation: fadeInNavbar 4s forwards;
+}
   .navbar-link {
     color: var(--white);
     font-family: var(--ff-oxanium);
@@ -1649,7 +1633,30 @@ body {
     font-weight: var(--fw-700);
     padding: 10px 20px;
   }
-
+  @keyframes fadeInNavbar {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Mulai dari atas */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Bergerak ke posisi semula */
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); /* Mulai dari kiri */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Bergerak ke posisi normal */
+  }
+}
+.navbar-item {
+  
+  animation: slideIn 4s ease-in-out forwards;
+}
   .navbar-link::before {
     display: block;
     opacity: 0;

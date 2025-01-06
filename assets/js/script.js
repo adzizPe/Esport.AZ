@@ -39,7 +39,6 @@ const content = {
     aboutUs: "About Us",
     tournamentInputTitle: "Tournament Input",
     tournamentInputDescription: "Easily input your tournament information through our form. Click the button below to get started.",
-
     copyrightText: "&copy; 2024 ESPORT .AZ All Right Reserved by <a href='#' class='copyright-link'>.AZ</a>",
     tournamentInputButton: "Fill Out the Form",
     tournaments: "Tournaments",
@@ -47,24 +46,6 @@ const content = {
     market: "Market"
   }
 };
-window.addEventListener('load', () => {
-  // Pilih elemen-elemen yang ingin dianimasikan
-  const subtitle = document.querySelector('.hero-subtitle');
-  const title = document.querySelector('.hero-title');
-  const text = document.querySelector('.hero-text');
-  const button = document.querySelector('.btn');
-
-  // Fungsi untuk menambahkan kelas active untuk animasi
-  function animateElements() {
-    subtitle.classList.add('active');
-    setTimeout(() => title.classList.add('active'), 500); // Delay 500ms
-    setTimeout(() => text.classList.add('active'), 1000); // Delay 1000ms
-    setTimeout(() => button.classList.add('active'), 1500); // Delay 1500ms
-  }
-
-  // Jalankan animasi setelah halaman dimuat
-  animateElements();
-});
 const images = [
   'bg1.jpg',
   'bg2.png',
@@ -73,24 +54,22 @@ const images = [
 ];
 
 let currentIndex = 0;
-const heroSection = document.querySelector('.hero'); // Ambil elemen dengan kelas .hero
+const homeSection = document.getElementById('home');
 
 function changeBackground() {
-  // Menambahkan kelas fade-out sebelum mengganti gambar
-  heroSection.classList.add('fade-out');
-
-  // Tunggu hingga animasi fade-out selesai (2 detik), lalu ubah background
+  // Hapus kelas fade-in sebelum gambar baru dimasukkan
+  homeSection.classList.remove('fade-out-in');
+  
+  // Ubah background image
+  homeSection.style.backgroundImage = `url(${images[currentIndex]})`;
+  
+  // Tambahkan kelas fade-in setelah perubahan background
   setTimeout(() => {
-    // Ganti background image
-    heroSection.style.backgroundImage = `url(${images[currentIndex]})`;
-
-    // Menghapus kelas fade-out dan menambahkan kelas fade-in
-    heroSection.classList.remove('fade-out');
-    heroSection.classList.add('fade-in');
-
-    // Update indeks gambar ke yang berikutnya
-    currentIndex = (currentIndex + 1) % images.length;
-  }, 2000); // Waktu delay untuk fade-out
+    homeSection.classList.add('fade-out-in');
+  }, 100); // Kecilkan jeda sebelum fade dimulai
+  
+  // Update indeks ke gambar berikutnya
+  currentIndex = (currentIndex + 1) % images.length;
 }
 
 // Panggil fungsi pertama kali
@@ -147,8 +126,8 @@ languageButtons.forEach(button => {
 });
 
 /**
- * navbar toggle
- */
+* navbar toggle
+*/
 navbarToggler.addEventListener("click", function () {
   navbar.classList.toggle("active");
   this.classList.toggle("active");
@@ -163,8 +142,8 @@ navbarLinks.forEach(link => {
 });
 
 /**
- * search toggle
- */
+* search toggle
+*/
 const searchTogglers = document.querySelectorAll("[data-search-toggler]");
 const searchBox = document.querySelector("[data-search-box]");
 
@@ -175,8 +154,8 @@ searchTogglers.forEach(toggler => {
 });
 
 /**
- * header
- */
+* header
+*/
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
@@ -217,3 +196,4 @@ let i = 0;
 setInterval(() => {
   link.href = `${i++ % 3}.png`;
 }, 500);
+
