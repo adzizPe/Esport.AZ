@@ -23,7 +23,7 @@ const content = {
     tournaments: "Turnamen",
     videos: "Video",
     market: "Market"
-    
+
   },
   en: {
     subtitle: "Esports World",
@@ -59,15 +59,15 @@ const homeSection = document.getElementById('home');
 function changeBackground() {
   // Hapus kelas fade-in sebelum gambar baru dimasukkan
   homeSection.classList.remove('fade-out-in');
-  
+
   // Ubah background image
   homeSection.style.backgroundImage = `url(${images[currentIndex]})`;
-  
+
   // Tambahkan kelas fade-in setelah perubahan background
   setTimeout(() => {
     homeSection.classList.add('fade-out-in');
   }, 100); // Kecilkan jeda sebelum fade dimulai
-  
+
   // Update indeks ke gambar berikutnya
   currentIndex = (currentIndex + 1) % images.length;
 }
@@ -107,11 +107,11 @@ function setLanguage(lang) {
   document.getElementById("home-link").innerText = content[lang].home;
   document.getElementById("news-link").innerText = content[lang].news;
 
-    // Mengubah teks untuk bagian Input Turnamen
-    document.querySelector(".tournament-input-title").innerText = content[lang].tournamentInputTitle;
-    document.querySelector(".tournament-input-description").innerText = content[lang].tournamentInputDescription;
-    document.querySelector(".tournament-input-button").innerText = content[lang].tournamentInputButton;
-  
+  // Mengubah teks untuk bagian Input Turnamen
+  document.querySelector(".tournament-input-title").innerText = content[lang].tournamentInputTitle;
+  document.querySelector(".tournament-input-description").innerText = content[lang].tournamentInputDescription;
+  document.querySelector(".tournament-input-button").innerText = content[lang].tournamentInputButton;
+
 
   // Perbarui waktu sesuai bahasa
   updateTime();
@@ -172,14 +172,14 @@ window.addEventListener("scroll", function () {
 // Update waktu saat ini
 function updateTime() {
   const now = new Date();
-  const options = { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric', 
-      hour: '2-digit', 
-      minute: '2-digit', 
-      second: '2-digit', 
-      hour12: false 
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
   };
   const locale = selectedLanguage === 'id' ? 'id-ID' : 'en-US';
   const formattedTime = now.toLocaleString(locale, options);
