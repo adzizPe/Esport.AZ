@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esports Tips & Trick - Azurium</title>
+  <link rel="icon" href="azurium-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS Styles -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #222;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style-type: none;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .tips-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .tip-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 5px solid #007BFF;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .tip-card h3 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .tip-card p {
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .tip-card button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .tip-card button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    footer a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2em;
+      }
+
+      .tip-card h3 {
+        font-size: 1.5em;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+    }
+
+    .quiz-container {
+      background-color: #fff;
+      padding: 30px;
+      margin-top: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-container h2 {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .quiz-container ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .quiz-container ul li {
+      margin-bottom: 15px;
+    }
+
+    .quiz-container input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .quiz-container button {
+      padding: 12px 30px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .quiz-container button:hover {
+      background-color: #218838;
+    }
+
+    .video-recommendations {
+      background-color: #fff;
+      padding: 30px;
+      margin-top: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-recommendations h3 {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .video-recommendations iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Esports Tips & Trick for Aspiring Pro Players</h1>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="turnamends.html">Tournaments</a></li>
+      <li><a href="market.html">Market</a></li>
+      <li><a href="tips&trick.html">Tips & Trick</a></li>
+      <li><a href="#about-us">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Section -->
+  <main>
+    <h2 class="section-title">Esports Tips for Aspiring Pro Players in Indonesia</h2>
+    <div class="tips-list">
+      <div class="tip-card">
+        <h3>1. Building Physical and Mental Toughness</h3>
+        <p>The best pro players know that the body and mind need to be in top shape to excel in esports. Regular physical activity, such as working out and staying hydrated, will help improve focus during long gaming sessions. Mental health is equally important—take breaks and find balance to prevent burnout.</p>
+        <button onclick="alert('Learn more about physical and mental conditioning.')">Learn More</button>
+      </div>
+      <div class="tip-card">
+        <h3>2. Mastering Game Mechanics</h3>
+        <p>To be a pro player, you must master the game’s mechanics. Spend time learning the ins and outs of your chosen game, whether it’s FPS, MOBA, or battle royale. Practice consistently and aim to learn the meta, the best strategies, and advanced gameplay tactics used by the top players.</p>
+        <button onclick="alert('Learn more about mastering game mechanics.')">Learn More</button>
+      </div>
+      <div class="tip-card">
+        <h3>3. The Importance of Teamwork</h3>
+        <p>In competitive esports, your team’s synergy is just as important as individual skill. Work on your communication, positioning, and understanding of team strategies. A well-coordinated team can easily overpower a team with stronger individual players.</p>
+        <button onclick="alert('Learn more about effective teamwork in esports.')">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz-container">
+      <h2>Test Your Knowledge: Are You Ready to Become a Pro Player?</h2>
+      <form id="quiz-form">
+        <ul>
+          <li>
+            <input type="radio" name="question1" id="q1-a" value="1">
+            <label for="q1-a">What is the most important factor in esports success?</label><br>
+            <input type="radio" name="question1" id="q1-b" value="0">
+            <label for="q1-b">Playing as much as possible without breaks.</label>
+          </li>
+          <li>
+            <input type="radio" name="question2" id="q2-a" value="1">
+            <label for="q2-a">Which is essential for pro player training?</label><br>
+            <input type="radio" name="question2" id="q2-b" value="0">
+            <label for="q2-b">Only focusing on individual gameplay.</label>
+          </li>
+        </ul>
+        <button type="submit">Submit Quiz</button>
+      </form>
+      <div id="quiz-result"></div>
+    </div>
+
+    <!-- Video Recommendations -->
+    <div class="video-recommendations">
+      <h3>Pro Player Training Insights</h3>
+      <iframe src="https://www.youtube.com/embed/your_video_link_here" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Watch this video to see how top pro players train and what makes them stand out.</p>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Azurium. All Rights Reserved. | <a href="#top">Back to Top</a></p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="back-to-top" onclick="scrollToTop()">↑</div>
+
+  <!-- JavaScript -->
+  <script>
+    // Back to Top Button Visibility
+    window.onscroll = function () {
+      var backToTop = document.getElementById('back-to-top');
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    };
+
+    // Scroll to Top Function
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    // Quiz functionality
+    document.getElementById('quiz-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      let score = 0;
+      if (document.getElementById('q1-a').checked) score++;
+      if (document.getElementById('q2-a').checked) score++;
+
+      document.getElementById('quiz-result').innerHTML = `<h3>Your Score: ${score}/2</h3>`;
+    });
+  </script>
+</body>
+
+</html>

@@ -256,6 +256,41 @@ setInterval(() => {
   link.href = `${i++ % 3}.png`;
 }, 500);
 if (!localStorage.getItem("captchaVerified")) {
-  window.location.href = "captcha.html"; // Redirect ke halaman CAPTCHA
+  // window.location.href = "captcha.html"; 
 }
 
+// Efek Scroll - Animasi Artikel Ketika Terlihat
+window.addEventListener('scroll', function() {
+  const articles = document.querySelectorAll('.article-content');
+  articles.forEach(article => {
+    const rect = article.getBoundingClientRect();
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      article.classList.add('visible');
+    } else {
+      article.classList.remove('visible');
+    }
+  });
+});
+
+// Menambahkan kelas 'visible' saat artikel masuk viewport
+const styleSheet = document.createElement("style");
+styleSheet.innerText = `
+  .article-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .article-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+document.head.appendChild(styleSheet);
+
+// Efek klik pada CTA Link
+document.querySelector('.cta-link').addEventListener('click', function(event) {
+  event.preventDefault();
+  alert("Terima kasih telah membaca! Anda akan diarahkan ke halaman 'Tentang Kami'.");
+  window.location.href = document.querySelector('.cta-link').getAttribute('href');
+});

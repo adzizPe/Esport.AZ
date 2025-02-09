@@ -2123,6 +2123,63 @@ body {
 /**
  * responsive for larger than 1200px screen
  */
+/* Berita Section */
+.news-section {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+  border-top: 2px solid #ddd;
+}
+
+/* Artikel Berita */
+.article-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul Berita */
+.news-section .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Deskripsi Berita */
+.news-section .section-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Media Gambar */
+.article-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Button */
+.cta-text {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+.cta-link {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cta-link:hover {
+  color: #0056b3;
+}
 
 @media (min-width: 1200px) {
 
