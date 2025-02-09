@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://azurium.my.id/sitemap.xml

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>azurium</title>
+  <meta name="google-adsense-account" content="ca-pub-8395153128421249">
+  <meta name="description"
+    content="Azurium adalah platform esports untuk turnamen, berita, dan video esports terbaru. Temukan solusi teknologi untuk dunia esports di sini.">
+  <link rel="icon" href="azurium-logo.png">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+  <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+    <div id="current-time-container">
+      <span id="current-time"></span>
+    </div>
+    <div class="header-top">
+      <div class="container">
+        <div class="countdown-text">
+        </div>
+        <div class="social-wrapper">
+
+          <p class="social-title">Ikuti Kami : </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="header-bottom skewBg" data-header>
+      <div class="container">
+        <a href="#" class="logo"><img src="azurium-logo.png" alt=""></a>
+        <div class="language-selector">
+          <button id="indonesia" class="lang-btn" onclick="setLanguage('id')">
+              <img src="indonesia.png" alt="Bahasa Indonesia" class="flag-icon">
+          </button>
+          <button id="english" class="lang-btn" onclick="setLanguage('en')">
+              <img src="united-kingdom.png" alt="English" class="flag-icon">
+          </button>
+        </div>
+        <nav class="navbar" data-navbar>
+          <!-- Navbar Section -->
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="" class="navbar-link skewBg" data-nav-link id="home-link">Beranda</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="" class="navbar-link skewBg" data-nav-link id="news-link">Berita</a>
+            </li>
+            <li class="navbar-item">
+              <a href="https://turnamends.blogspot.com/" id="tournaments" class="navbar-link skewBg"
+                data-nav-link>Turnamen</a>
+            </li>
+            <li class="navbar-item">
+              <a href="" id="market" class="navbar-link skewBg" data-nav-link>Market</a>
+            </li>
+            <li class="navbar-item">
+              <a href="" id="videos" class="navbar-link skewBg" data-nav-link>Video</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#abodut-us" id="about-us" class="navbar-link skewBg" data-nav-link>Tentang Kami</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="home">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-subtitle">Esports Dunia</p>
+            <h1 class="h1 hero-title">
+              Buat <span class="span">Kelola</span> Pertandingan Esports
+            </h1>
+            <p class="hero-text">
+              Temukan teknologi atau tim untuk proyek digital di dunia esports, serta temukan spesialis, pengembang,
+              atau peneliti individu yang ahli di bidang ini.
+            </p>
+            <button class="btn skewBg"><a href="#about-us">Tentang Kami</button>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- input turnamen -->
+  <section id="tournament-input" class="tournament-section">
+    <div class="container">
+      <h2 class="section-title tournament-input-title">Input Turnamen</h2>
+      <p class="section-description tournament-input-description">
+        Masukkan informasi turnamen Anda dengan mudah melalui formulir kami. Klik tombol di bawah untuk memulai.
+      </p>
+      <a href="https://bit.ly/DaftarkanEventDisini" target="_blank"
+        class="btn tournament-btn tournament-input-button">Isi Formulir</a>
+    </div>
+  </section>
+
+
+  <!-- 
+  - #ABOUT US
+-->
+  <section id="abodut-us" class="about-section">
+    <div class="container">
+      <h2 class="section-title">Tentang Kami</h2>
+      <div class="about-content">
+        <p class="about-text">
+          Selamat datang di <strong>Azurium</strong>, pintu gerbang Anda menuju dunia Esports yang memikat dan dinamis.
+          Kami percaya bahwa setiap momen di Esports adalah lebih dari sekadar permainan; ini adalah panggung bagi
+          bakat,
+          strategi, dan semangat yang tak tertandingi.
+        </p>
+        <p class="about-text">
+          Dengan visi menjadi pemimpin global dalam solusi esports, Azurium menyediakan platform yang mengintegrasikan
+          teknologi terdepan dengan pengalaman yang mendalam, memperkaya komunitas esports melalui turnamen yang seru,
+          pengembangan talenta, dan inovasi berkelanjutan.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight">
+            <h3>Visi Kami</h3>
+            <p>Menciptakan ekosistem di mana setiap pemain, dari amatir hingga profesional, dapat berkembang dan
+              mencapai
+              potensi penuh mereka.</p>
+          </div>
+          <div class="highlight">
+            <h3>Misi Kami</h3>
+            <p>Memperkaya komunitas esports dengan turnamen adil, pelatihan berkualitas, dan kerjasama inovatif dengan
+              berbagai pihak industri.</p>
+          </div>
+          <div class="highlight">
+            <h3>Filosofi Kami</h3>
+            <p>Kami percaya pada kekuatan komunitas dan kolaborasi, menciptakan lingkungan yang inklusif dan mendukung
+              di
+              mana semua orang bisa merasa diterima dan berkontribusi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <!--  -->
+        <div class="footer-wrapper">
+
+          <div class="social-wrapper">
+
+            <p class="footer-list-title">Follow Kami</p>
+
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link" style="background-color: #3b5998">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link" style="background-color: #E1306C">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link" style="background-color: #55acee">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+
+
+
+            </ul>
+
+          </div>
+
+          <div class="footer-newsletter">
+
+            <p class="footer-list-title">Info Lebih Lanjut </p>
+
+            <form action="" class="footer-newsletter">
+              <input type="email" name="email_address" aria-label="email" placeholder="Masukkan Email mu " required
+                class="email-field">
+
+              <button type="submit" class="footer-btn" aria-label="submit">
+                <ion-icon name="rocket"></ion-icon>
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </footer>
+
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="copyright" id="footer-copyright">
+        &copy; 2024 ESPORT .AZ All Right Reserved by <a href="#" class="copyright-link">.AZ</a>
+      </p>
+    </div>
+  </div>
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+
+  <script src="./assets/js/script.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8395153128421249"
+  crossorigin="anonymous"></script>
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>
